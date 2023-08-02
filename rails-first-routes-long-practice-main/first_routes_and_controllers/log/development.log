@@ -93,3 +93,129 @@ Processing by UsersController#create as */*
 Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 245)
 
 
+Started GET "/users/2" for ::1 at 2023-08-02 16:22:16 -0400
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/2" for ::1 at 2023-08-02 16:23:35 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 362)
+
+
+Started POST "/users/2" for ::1 at 2023-08-02 16:27:56 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2023-08-02 16:30:37 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 214)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:30:53 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 109)
+
+
+Started POST "/users/5" for ::1 at 2023-08-02 16:33:26 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/5"):
+  
+Started GET "/users/5" for ::1 at 2023-08-02 16:34:24 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 123)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:39:38 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 132)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:39:43 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 122)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:39:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 131)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:39:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 131)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:40:06 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 122)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:40:12 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 131)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:44:33 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>"key: value"}, "id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 140)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:45:31 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>"{key: value}"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.2ms | Allocations: 140)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:47:01 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>"inner_inner_hash[key] = value"}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.3ms | Allocations: 141)
+
+
+Started GET "/users/5" for ::1 at 2023-08-02 16:47:49 -0400
+Processing by UsersController#show as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}, "id"=>"5"}
+Completed 200 OK in 0ms (Views: 0.3ms | Allocations: 147)
+
+
+Started POST "/users/" for ::1 at 2023-08-02 16:50:30 -0400
+Processing by UsersController#create as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}}
+Completed 200 OK in 2ms (Views: 1.0ms | Allocations: 139)
+
+
+Started POST "/users/5" for ::1 at 2023-08-02 16:50:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/5"):
+  
+Started POST "/users/99" for ::1 at 2023-08-02 16:51:17 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/99"):
+  
+Started POST "/users/92783478247825" for ::1 at 2023-08-02 16:51:22 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/92783478247825"):
+  
+Started POST "/users/" for ::1 at 2023-08-02 16:51:27 -0400
+Processing by UsersController#create as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}}
+Completed 200 OK in 1ms (Views: 1.0ms | Allocations: 138)
+
+
+Started POST "/users" for ::1 at 2023-08-02 16:51:36 -0400
+Processing by UsersController#create as */*
+  Parameters: {"some_category"=>{"a_key"=>"[FILTERED]", "a_second_key"=>"[FILTERED]", "inner_inner_hash"=>{"key"=>"value"}}}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 138)
+
+

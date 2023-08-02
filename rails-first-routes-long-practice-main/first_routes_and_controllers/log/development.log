@@ -1,2 +1,46 @@
   [1m[35m (77.2ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
   [1m[35m (40.0ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-08-02 15:16:18 -0400
+
+ActiveRecord::NoDatabaseError - We could not find your database: first_routes_and_controllers_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+Started POST "/__better_errors/f769278d177ee3df/variables" for ::1 at 2023-08-02 15:16:18 -0400
+Started GET "/" for ::1 at 2023-08-02 15:16:56 -0400
+
+ActiveRecord::NoDatabaseError - We could not find your database: first_routes_and_controllers_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+Started POST "/__better_errors/7049c7bc4b60d7c3/variables" for ::1 at 2023-08-02 15:16:56 -0400
+Started GET "/" for ::1 at 2023-08-02 15:25:07 -0400
+
+ActiveRecord::NoDatabaseError - We could not find your database: first_routes_and_controllers_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+Started GET "/users" for ::1 at 2023-08-02 15:25:14 -0400
+
+ActiveRecord::NoDatabaseError - We could not find your database: first_routes_and_controllers_development. Which can be found in the database configuration file located at config/database.yml.
+To resolve this issue:
+- Did you create the database for this app, or delete it? You may need to create your database.
+- Has the database name changed? Check your database.yml config has the correct database name.
+To create your database, run:
+        bin/rails db:create:
+
+  [1m[35m (111.7ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
+  [1m[35m (45.3ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+Started GET "/users" for ::1 at 2023-08-02 15:29:21 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+

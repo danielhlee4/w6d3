@@ -44,3 +44,52 @@ Started GET "/users" for ::1 at 2023-08-02 15:29:21 -0400
 
 AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
 
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "first_routes_and_controllers_test" ENCODING = 'unicode'[0m
+Started GET "/users" for ::1 at 2023-08-02 15:44:06 -0400
+
+AbstractController::ActionNotFound - The action 'index' could not be found for UsersController:
+
+Started GET "/users" for ::1 at 2023-08-02 15:45:13 -0400
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 273)
+
+
+Started GET "/users" for ::1 at 2023-08-02 16:05:58 -0400
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 0ms (Allocations: 135)
+
+
+Started GET "/users" for ::1 at 2023-08-02 16:08:19 -0400
+Processing by UsersController#index as */*
+No template found for UsersController#index, rendering head :no_content
+Completed 204 No Content in 1ms (Allocations: 81)
+
+
+Started GET "/users" for ::1 at 2023-08-02 16:09:25 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 6ms (Views: 5.5ms | Allocations: 1309)
+
+
+Started GET "/users?fav_food=pizza" for ::1 at 2023-08-02 16:14:15 -0400
+Processing by UsersController#index as */*
+  Parameters: {"fav_food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 2ms (Views: 1.1ms | Allocations: 166)
+
+
+Started POST "/users?fav_food=pizza" for ::1 at 2023-08-02 16:17:41 -0400
+
+AbstractController::ActionNotFound - The action 'create' could not be found for UsersController:
+
+Started POST "/users?fav_food=pizza" for ::1 at 2023-08-02 16:19:23 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav_food"=>"pizza"}
+Completed 200 OK in 1ms (Views: 0.8ms | Allocations: 245)
+
+

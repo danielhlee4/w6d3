@@ -25,7 +25,12 @@ class UsersController < ApplicationController
         else
             render json: @user.errors.full_messages, status: :unprocessable_entity
         end
+    end
 
+    def destroy
+        @user = User.find(params[:id])
+        @user.destroy
+        redirect_to users_url
     end
 
     private 

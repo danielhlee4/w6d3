@@ -12,4 +12,7 @@
     User.create(username: 'Jack Black')
     User.create(username: 'Mike White')
     
-
+    Artwork.destroy_all
+    Artwork.create(title: 'Spongebob', image_url: 'www.square.pants', artist_id: 2)
+    Artwork.create(title: 'Mona Lisa', image_url: 'www.louvre.com', artist_id: 3)
+    Artwork.create(title: 'Calvin and Hobbes', image_url: 'www.billwatterson.com', artist_id: 1)

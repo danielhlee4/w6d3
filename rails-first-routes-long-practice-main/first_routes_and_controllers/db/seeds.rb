@@ -9,5 +9,7 @@
     User.destroy_all
     User.create(username: 'Dan Lee')
     User.create(username: 'Dennis Lee')
+    User.create(username: 'Jack Black')
+    User.create(username: 'Mike White')
     
 

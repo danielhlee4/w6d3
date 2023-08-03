@@ -279,3 +279,366 @@ NameError - undefined local variable or method `anything' for #<UsersController:
                      ^^^^^^^^:
   app/controllers/users_controller.rb:4:in `index'
 
+Started POST "/users" for ::1 at 2023-08-02 17:41:24 -0400
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+
+ActiveRecord::PendingMigrationError - Migrations are pending. To resolve this issue, run:
+        bin/rails db:migrate RAILS_ENV=development
+You have 1 pending migration:
+20230802205610_create_users.rb:
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(2711202859307440470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateUsers (20230802205610)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "name" character varying NOT NULL, "email" character varying NOT NULL, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20230802205610"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2023-08-02 21:43:03.242202"], ["updated_at", "2023-08-02 21:43:03.242202"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(2711202859307440470)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users" for ::1 at 2023-08-02 17:43:42 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"best_restaurant"=>"taco bell"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 374)
+
+
+Started POST "/users" for ::1 at 2023-08-02 17:44:03 -0400
+Processing by UsersController#create as */*
+  Parameters: {"best_restaurant"=>"chik filet"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 113)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:44:50 -0400
+Processing by UsersController#index as */*
+  Parameters: {"best_restaurant"=>"chik filet"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 500 Internal Server Error in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1903)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users" for ::1 at 2023-08-02 17:45:15 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 200 OK in 0ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 450)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:45:18 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 164)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:45:19 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 4)
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 148)
+
+
+Started GET "/users" for ::1 at 2023-08-02 17:45:36 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.6ms | ActiveRecord: 0.0ms | Allocations: 149)
+
+
+Started GET "/users" for ::1 at 2023-08-03 09:12:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 500 Internal Server Error in 4ms (Views: 2.0ms | ActiveRecord: 0.0ms | Allocations: 3451)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, :email, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users" for ::1 at 2023-08-03 09:13:43 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 500 Internal Server Error in 3ms (Views: 0.4ms | ActiveRecord: 0.0ms | Allocations: 2415)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/users" for ::1 at 2023-08-03 09:16:38 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 13)
+Completed 500 Internal Server Error in 6ms (Views: 2.9ms | ActiveRecord: 0.0ms | Allocations: 3455)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users/5" for ::1 at 2023-08-03 09:17:26 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"5"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 210)
+
+
+Started GET "/users/4" for ::1 at 2023-08-03 09:17:33 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"4"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/users/3" for ::1 at 2023-08-03 09:17:38 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 109)
+
+
+Started GET "/users/9" for ::1 at 2023-08-03 09:17:45 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"9"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/users/23577235" for ::1 at 2023-08-03 09:17:52 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"23577235"}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 110)
+
+
+Started GET "/users/" for ::1 at 2023-08-03 09:18:00 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 500 Internal Server Error in 7ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 2131)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started POST "/users/?name=dan" for ::1 at 2023-08-03 09:23:30 -0400
+Processing by UsersController#create as */*
+  Parameters: {"name"=>"dan"}
+Completed 200 OK in 0ms (Views: 0.1ms | Allocations: 203)
+
+
+Started GET "/users/" for ::1 at 2023-08-03 09:25:48 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 500 Internal Server Error in 8ms (Views: 1.2ms | Allocations: 2390)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, :email, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users/" for ::1 at 2023-08-03 09:26:21 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | Allocations: 2392)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, :email, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users/" for ::1 at 2023-08-03 09:28:35 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 500 Internal Server Error in 3ms (Views: 0.3ms | Allocations: 2393)
+
+
+
+NoMethodError - undefined method `validates' for User:Class
+    validates :name, :email, presence: true
+    ^^^^^^^^^:
+  app/models/user.rb:2:in `<class:User>'
+  app/models/user.rb:1:in `<top (required)>'
+  app/controllers/users_controller.rb:4:in `index'
+
+Started GET "/users/" for ::1 at 2023-08-03 09:29:49 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Completed 500 Internal Server Error in 2ms (Views: 0.5ms | Allocations: 1809)
+
+
+
+AbstractController::DoubleRenderError - Render and/or redirect were called multiple times in this action. Please note that you may only call render OR redirect, and at most once per action. Also note that neither redirect nor render terminate execution of the action, so if you want to exit an action after redirecting, you need to do something like "redirect_to(...) and return".:
+  app/controllers/users_controller.rb:5:in `index'
+
+Started GET "/users/" for ::1 at 2023-08-03 09:30:24 -0400
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 17ms (Views: 15.8ms | ActiveRecord: 8.2ms | Allocations: 4654)
+
+
+Started POST "/users/?user" for ::1 at 2023-08-03 09:46:48 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>nil}
+Completed 400 Bad Request in 2ms (Allocations: 1138)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/?user" for ::1 at 2023-08-03 09:47:28 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>nil}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 1271)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/?user" for ::1 at 2023-08-03 09:50:10 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>nil}
+Completed 400 Bad Request in 18ms (ActiveRecord: 0.0ms | Allocations: 596)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/?user" for ::1 at 2023-08-03 09:52:47 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>nil}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 591)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: user:
+  app/controllers/users_controller.rb:8:in `create'
+
+Started POST "/users/" for ::1 at 2023-08-03 09:55:43 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}}
+[31mUnpermitted parameters: ::name, ::email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000107932580>, params: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}, "controller"=>"users", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 41ms (ActiveRecord: 17.9ms | Allocations: 10811)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 09:55:48 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}}
+[31mUnpermitted parameters: ::name, ::email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000001081eef48>, params: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}, "controller"=>"users", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms | Allocations: 1516)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 09:55:48 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}}
+[31mUnpermitted parameters: ::name, ::email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x0000000108567210>, params: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}, "controller"=>"users", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 4ms (ActiveRecord: 0.0ms | Allocations: 1502)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 09:55:49 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}}
+[31mUnpermitted parameters: ::name, ::email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000001087bc0d8>, params: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}, "controller"=>"users", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 3ms (ActiveRecord: 0.0ms | Allocations: 1499)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:9:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 09:58:54 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}}
+[31mUnpermitted parameters: ::name, ::email. Context: { controller: UsersController, action: create, request: #<ActionDispatch::Request:0x00000001085d7678>, params: {"user"=>{":name"=>"Dan Lee", ":email"=>"DanLee@dl.com"}, "controller"=>"users", "action"=>"create"} }[0m
+Completed 422 Unprocessable Entity in 173332ms (ActiveRecord: 3.7ms | Allocations: 98428)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Name can't be blank, Email can't be blank:
+  app/controllers/users_controller.rb:10:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 10:01:51 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Dan Lee", "email"=>"DanLee@dl.com"}}
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (5.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dan Lee"], ["email", "DanLee@dl.com"], ["created_at", "2023-08-03 14:01:54.962181"], ["updated_at", "2023-08-03 14:01:54.962181"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Completed 200 OK in 3456ms (Views: 0.7ms | ActiveRecord: 7.6ms | Allocations: 5540)
+
+
+Started POST "/users" for ::1 at 2023-08-03 10:05:05 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Dan Lee"}}
+Completed 422 Unprocessable Entity in 2337ms (ActiveRecord: 0.0ms | Allocations: 2837)
+
+
+
+ActiveRecord::RecordInvalid - Validation failed: Email can't be blank:
+  app/controllers/users_controller.rb:10:in `create'
+
+Started POST "/users" for ::1 at 2023-08-03 10:06:25 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"Dan Lee"}}
+Completed 422 Unprocessable Entity in 7ms (Views: 0.1ms | ActiveRecord: 3.6ms | Allocations: 3540)
+
+
